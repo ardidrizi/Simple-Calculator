@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 public class CalculatorGUI extends JFrame implements ActionListener {
 
     private JTextField display;
-    private double num1, num2, result;
+    private double num1;
     private char operator;
 
     public CalculatorGUI() {
@@ -56,7 +56,8 @@ public class CalculatorGUI extends JFrame implements ActionListener {
         if (command.charAt(0) == 'C') {
             display.setText("");
         } else if (command.charAt(0) == '=') {
-            num2 = Double.parseDouble(display.getText());
+            double num2 = Double.parseDouble(display.getText());
+            double result;
             switch (operator) {
                 case '+':
                     result = num1 + num2;
